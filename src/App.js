@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import fire from './Routes/fire';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      error: null,
+      loggedIn: null
+    };
+  }
+
+  componentDidMount = () => {
+    this.setState({loading: true});
+    fire.auth().onAuthStateChanged(user => {
+      if (user){
+        this.setState({loggedIn: true, loading: false});
+      } else {
+        this.setState({loggedIn: false, loading: false})
+      }
+    });
+  };
+
   render() {
     return (
       <div className="App">
