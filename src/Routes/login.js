@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fire from './fire';
 
-class login extends Component {
+class Login extends Component {
 
     constructor(props){
         super(props);
@@ -67,4 +67,4 @@ class login extends Component {
     }
 }
 
-export default login;
+export default Login;
